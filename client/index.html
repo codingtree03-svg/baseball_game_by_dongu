@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실시간 멀티플레이어 야구 게임</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>멀티플레이어 야구</h1>
+        
+        <div id="match-screen">
+            <button id="btn-join">게임 매칭 시작하기</button>
+            <p id="match-status">대기실 입장 전입니다.</p>
+        </div>
+
+        <div id="game-screen" class="hidden">
+            <div id="scoreboard">
+                <div class="score-box">이닝: <span id="info-inning">1</span>회</div>
+                <div class="score-box">아웃: <span id="info-outs">0</span></div>
+                <div class="score-box">S: <span id="info-strikes">0</span> | B: <span id="info-balls">0</span></div>
+                <div class="score-box">내 점수: <span id="my-score">0</span> | 상대 점수: <span id="op-score">0</span></div>
+                <div class="score-box">Ping: <span id="ping-value">0</span>ms</div>
+            </div>
+
+            <div id="role-banner">역할 설정 중...</div>
+
+            <div id="field">
+                <div id="pitcher-plate"></div>
+                <div id="ball"></div>
+                <div id="bat"></div>
+                <div id="strike-zone"></div>
+            </div>
+
+            <div id="controls">
+                <div id="pitcher-controls" class="hidden">
+                    <button onclick="throwPitch('fast')">직구 던지기</button>
+                    <button onclick="throwPitch('curve')">커브 던지기</button>
+                </div>
+                <div id="batter-controls" class="hidden">
+                    <button id="btn-swing">스윙!!</button>
+                </div>
+            </div>
+            
+            <div id="game-message">전광판: 투수의 투구를 기다리는 중...</div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
