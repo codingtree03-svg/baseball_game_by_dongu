@@ -1,0 +1,117 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+#game-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+#role-banner {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffeb3b;
+    margin-bottom: 15px;
+}
+
+#field {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: #2e7d32;
+    border: 4px solid #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#pitcher-plate {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 10px;
+    background: #fff;
+}
+
+#strike-zone {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 100px;
+    border: 2px dashed rgba(255,255,255,0.5);
+    background: rgba(255,255,255,0.05);
+}
+
+#ball {
+    position: absolute;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    display: none;
+    z-index: 10;
+}
+
+#bat {
+    position: absolute;
+    bottom: 30px;
+    left: 42%;
+    width: 15px;
+    height: 70px;
+    background: #d7ccc8;
+    border-radius: 4px;
+    transform-origin: bottom center;
+    transition: transform 0.1s ease;
+}
+
+.swinging {
+    transform: rotate(-90deg);
+}
+
+#controls button {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    background: #0288d1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#controls button:hover {
+    background: #039be5;
+}
+
+#game-message {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #a5d6a7;
+}
